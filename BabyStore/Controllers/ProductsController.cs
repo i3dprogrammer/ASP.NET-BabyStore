@@ -171,8 +171,7 @@ namespace BabyStore.Controllers
             viewModel.ImageLists = new List<SelectList>();
             foreach (var imageMapping in product.ProductImageMappings.OrderBy(pim => pim.ImageNumber))
             {
-                viewModel.ImageLists.Add(new SelectList(db.ProductImages, "ID", "FileName",
-                imageMapping.ProductImageID));
+                viewModel.ImageLists.Add(new SelectList(db.ProductImages, "ID", "FileName", imageMapping.ProductImageID));
             }
             for (int i = viewModel.ImageLists.Count; i < Constants.NumberOfProductImages; i++)
             {
