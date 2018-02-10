@@ -204,37 +204,25 @@
     <Compile Include="Controllers\ProductImagesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\UsersAdminController.cs" />
     <Compile Include="DAL\StoreContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802060532022_InitialDatabase.cs" />
-    <Compile Include="Migrations\201802060532022_InitialDatabase.Designer.cs">
-      <DependentUpon>201802060532022_InitialDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201802100226387_TwoContextStore.cs" />
+    <Compile Include="Migrations\201802100226387_TwoContextStore.Designer.cs">
+      <DependentUpon>201802100226387_TwoContextStore.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802060550276_CategoryNameValidation.cs" />
-    <Compile Include="Migrations\201802060550276_CategoryNameValidation.Designer.cs">
-      <DependentUpon>201802060550276_CategoryNameValidation.cs</DependentUpon>
+    <Compile Include="Migrations\201802100235417_Initial.cs" />
+    <Compile Include="Migrations\201802100235417_Initial.Designer.cs">
+      <DependentUpon>201802100235417_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802060600084_ProductValidation.cs" />
-    <Compile Include="Migrations\201802060600084_ProductValidation.Designer.cs">
-      <DependentUpon>201802060600084_ProductValidation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802062050553_ProductImages.cs" />
-    <Compile Include="Migrations\201802062050553_ProductImages.Designer.cs">
-      <DependentUpon>201802062050553_ProductImages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802062150447_UniqueFileName.cs" />
-    <Compile Include="Migrations\201802062150447_UniqueFileName.Designer.cs">
-      <DependentUpon>201802062150447_UniqueFileName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802070628104_CreateProductImageMappings.cs" />
-    <Compile Include="Migrations\201802070628104_CreateProductImageMappings.Designer.cs">
-      <DependentUpon>201802070628104_CreateProductImageMappings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\IdentityConfiguration.cs" />
+    <Compile Include="Migrations\StoreConfiguration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\DataFormatString.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Product.cs" />
@@ -293,14 +281,12 @@
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
@@ -327,6 +313,18 @@
     <Content Include="Views\RolesAdmin\Edit.cshtml" />
     <Content Include="Views\RolesAdmin\Delete.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Address.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Address.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_CreateRegisterUserPartial.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Shared\_UserDetailsPartial.cshtml" />
+    <Content Include="Views\Manage\Edit.cshtml" />
+    <Content Include="Views\Shared\_EditUserPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,23 +346,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802060532022_InitialDatabase.resx">
-      <DependentUpon>201802060532022_InitialDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802100226387_TwoContextStore.resx">
+      <DependentUpon>201802100226387_TwoContextStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802060550276_CategoryNameValidation.resx">
-      <DependentUpon>201802060550276_CategoryNameValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802060600084_ProductValidation.resx">
-      <DependentUpon>201802060600084_ProductValidation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802062050553_ProductImages.resx">
-      <DependentUpon>201802062050553_ProductImages.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802062150447_UniqueFileName.resx">
-      <DependentUpon>201802062150447_UniqueFileName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802070628104_CreateProductImageMappings.resx">
-      <DependentUpon>201802070628104_CreateProductImageMappings.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802100235417_Initial.resx">
+      <DependentUpon>201802100235417_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

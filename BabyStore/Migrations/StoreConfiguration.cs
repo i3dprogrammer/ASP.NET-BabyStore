@@ -7,9 +7,9 @@ namespace BabyStore.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BabyStore.DAL.StoreContext>
+    internal sealed class StoreConfiguration : DbMigrationsConfiguration<BabyStore.DAL.StoreContext>
     {
-        public Configuration()
+        public StoreConfiguration()
         {
             AutomaticMigrationsEnabled = false;
         }
