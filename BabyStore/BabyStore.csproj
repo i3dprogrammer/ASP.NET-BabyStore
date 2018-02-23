@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -197,6 +198,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BasketController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -217,10 +219,16 @@
     <Compile Include="Migrations\201802100235417_Initial.Designer.cs">
       <DependentUpon>201802100235417_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802130503303_CreateBasketLine.cs" />
+    <Compile Include="Migrations\201802130503303_CreateBasketLine.Designer.cs">
+      <DependentUpon>201802130503303_CreateBasketLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\IdentityConfiguration.cs" />
     <Compile Include="Migrations\StoreConfiguration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Basket.cs" />
+    <Compile Include="Models\BasketLine.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DataFormatString.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -231,6 +239,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\BasketSummaryViewModel.cs" />
+    <Compile Include="ViewModels\BasketViewModel.cs" />
     <Compile Include="ViewModels\ProductIndexViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
@@ -324,6 +334,8 @@
     <Content Include="Views\Shared\_UserDetailsPartial.cshtml" />
     <Content Include="Views\Manage\Edit.cshtml" />
     <Content Include="Views\Shared\_EditUserPartial.cshtml" />
+    <Content Include="Views\Basket\Index.cshtml" />
+    <Content Include="Views\Basket\Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -350,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802100235417_Initial.resx">
       <DependentUpon>201802100235417_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802130503303_CreateBasketLine.resx">
+      <DependentUpon>201802130503303_CreateBasketLine.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

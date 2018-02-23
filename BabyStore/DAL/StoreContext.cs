@@ -13,5 +13,6 @@ namespace BabyStore.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<ProductImageMapping> ProductImageMappings { get; set; }
+        public DbSet<BasketLine> BasketLines { get; set; }
     }
 }
